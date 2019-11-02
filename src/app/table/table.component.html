@@ -1,0 +1,42 @@
+<div class="input-alignment">
+  <span>
+    Choose a Pokemon by Pokedex #:
+  </span>
+  <span class="input-field">
+    <mat-form-field appearance="outline">
+      <input class="input-field" matInput placeholder="Enter a number" [(ngModel)]="id" type="number">
+    </mat-form-field>
+  </span>
+  <span class="button-container">
+    <button class="ok-button" mat-raised-button color="primary" (click)="getPokemonByID(id)">OK</button>
+  </span>
+</div>
+
+<br>
+<br>
+
+<!--<mat-card>-->
+  <!--<mat-card-title>{{pokemon.name}}</mat-card-title>-->
+  <!--<mat-card-subtitle>{{pokemon?.types[0].type.name}}</mat-card-subtitle>-->
+  <!--<mat-card-content>-->
+    <!--<p>Pokemon Description</p>-->
+  <!--</mat-card-content>-->
+<!--</mat-card>-->
+
+<div>
+  <table class="table-position">
+    <thead class="table-title">
+      <td colspan="2">List Of Pokemon</td>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pokemon Sprite</td>
+        <td>Pokemon Name</td>
+      </tr>
+      <tr>
+        <td><img src="{{pokemon?.sprites.front_default}}"></td>
+        <td>{{pokemon?.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

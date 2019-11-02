@@ -1,0 +1,26 @@
+.input-field {
+    margin-left: 5%;
+}
+
+.table-title {
+    text-align: center;
+}
+
+.table-position {
+    margin: auto;
+    width: 50%;
+}
+
+.input-alignment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container {
+    height: 5em;
+}
+
+.ok-button {
+    height: 3.7em;
+}
