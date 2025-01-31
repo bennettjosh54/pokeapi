@@ -8,9 +8,9 @@ import { TableComponent } from './table/table.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+// import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+// import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
+// import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
 
 
 
@@ -24,9 +24,9 @@ import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
+    // MatInputModule,
+    // MatButtonModule,
+    // MatCardModule,
     NoopAnimationsModule
   ],
   providers: [],
