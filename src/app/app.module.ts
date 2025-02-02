@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -25,9 +27,11 @@ import { MatCardModule } from '@angular/material/card';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    NoopAnimationsModule,
     MatInputModule,
     MatCardModule,
-    NoopAnimationsModule
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())

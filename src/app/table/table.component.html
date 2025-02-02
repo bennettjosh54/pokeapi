@@ -8,22 +8,14 @@
     </mat-form-field>
   </span>
   <span class="button-container">
-    <button class="ok-button" mat-raised-button color="primary" (click)="getPokemonByID(id)">OK</button>
+    <button [disabled]="!id" class="ok-button" mat-raised-button color="primary" (click)="getPokemonByID(id)">OK</button>
   </span>
 </div>
 
 <br>
 <br>
 
-<!--<mat-card>-->
-  <!--<mat-card-title>{{pokemon.name}}</mat-card-title>-->
-  <!--<mat-card-subtitle>{{pokemon?.types[0].type.name}}</mat-card-subtitle>-->
-  <!--<mat-card-content>-->
-    <!--<p>Pokemon Description</p>-->
-  <!--</mat-card-content>-->
-<!--</mat-card>-->
-
-<div>
+<!-- <div>
   <table class="table-position">
     <thead class="table-title">
       <td colspan="2">List Of Pokemon</td>
@@ -39,4 +31,4 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
