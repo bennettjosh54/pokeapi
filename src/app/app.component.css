@@ -1,0 +1,12 @@
+.main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    app-table {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+}
