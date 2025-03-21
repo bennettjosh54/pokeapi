@@ -19,6 +19,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -34,7 +36,6 @@ import { MatSortModule } from '@angular/material/sort';
     BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
-    MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
     MatToolbarModule,
@@ -42,7 +43,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatTooltipModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule,
+    CommonModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())
