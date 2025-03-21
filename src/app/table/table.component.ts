@@ -9,6 +9,31 @@ import {merge, Observable, of as observableOf} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
+
+export interface PokeApiPaginated {
+  count: number,
+  next: string,
+  previous: string,
+  results: [
+    PokeApiPageResult
+  ]
+}
+
+export class PokeApiPage {
+  constructor(private _httpClient: HttpClient) {}
+
+  getPaginatedResults(page: number): Observable<PokeApiPaginated> {
+    const requestUrl = `https://pokeapi.co/api/v2/pokemon/?offset=${page * 100}&limit=100`;
+    return this._httpClient.get<PokeApiPaginated>(requestUrl);
+  }
+}
+
+export interface PokeApiPageResult {
+  name: string,
+  url: string
+}
 
 @Component({
     selector: 'app-table',
@@ -18,6 +43,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class TableComponent implements OnInit, AfterViewInit {
 
+  infoDialog = inject(MatDialog);
   private _httpClient = inject(HttpClient);
 
   pokemon: Pokemon;
@@ -85,35 +111,23 @@ export class TableComponent implements OnInit, AfterViewInit {
       });
   }
 
-  getPokemonByID(id: number) {
-    this.appService.getPokemonById(id).subscribe((response) => {
-      this.pokemon = <Pokemon> response;
-      console.log(this.pokemon);
-      console.log(this.id);
+  // getPokemonByID(id: number): void {
+  //   this.appService.getPokemonById(id).subscribe((response) => {
+  //     this.pokemon = <Pokemon> response;
+  //     console.log(this.pokemon);
+  //     console.log(this.id);
+  //   });
+  // }
+
+  showPokemonInfo(infoUrl: string): void {
+
+    this.infoDialog.open(PokemonCardComponent, {
+      data: {
+        infoUrl: infoUrl,
+      },
     });
+
   }
 
 }
 
-export interface PokeApiPaginated {
-  count: number,
-  next: string,
-  previous: string,
-  results: [
-    PokeApiPageResult
-  ]
-}
-
-export class PokeApiPage {
-  constructor(private _httpClient: HttpClient) {}
-
-  getPaginatedResults(page: number): Observable<PokeApiPaginated> {
-    const requestUrl = `https://pokeapi.co/api/v2/pokemon/?offset=${page * 100}&limit=100`;
-    return this._httpClient.get<PokeApiPaginated>(requestUrl);
-  }
-}
-
-export interface PokeApiPageResult {
-  name: string,
-  url: string
-}
